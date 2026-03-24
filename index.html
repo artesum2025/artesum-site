@@ -6,33 +6,28 @@
     <title>ArteSUM</title>
     <style>
         body { margin: 0; padding: 0; background-color: #000; overflow-x: hidden; }
-        .container { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; }
-        img { width: 100%; height: auto; display: block; }
+        .container { position: relative; width: 100%; } /* 너비를 100%로 설정 */
+        img { width: 100%; height: auto; display: block; border: none; }
 
-        /* 클릭 가능한 투명 버튼 영역입니다 */
+        /* 클릭 가능한 투명 버튼 (Start 버튼 위치에 맞게 조절) */
         .start-btn {
             position: absolute;
-            bottom: 5%;      /* 이미지 하단에서 5% 높이 */
-            left: 50%;       /* 가로 중앙 */
-            transform: translateX(-50%); /* 정확히 가운데 정렬 */
-            width: 20%;      /* 버튼의 가로 너비 (조절 가능) */
-            height: 8%;      /* 버튼의 세로 높이 (조절 가능) */
-            background-color: rgba(255, 255, 255, 0); /* 투명하게 설정 */
-            cursor: pointer; /* 마우스 올리면 손가락 모양 */
+            bottom: 12%;      /* 이미지 하단에서의 높이 (필요시 조절) */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15%;       /* 버튼 가로 크기 */
+            height: 6%;       /* 버튼 세로 크기 */
+            background-color: rgba(255, 255, 255, 0); 
+            cursor: pointer;
             display: block;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <!-- 내 메인 이미지 파일 이름과 똑같아야 합니다! -->
         <img src="main-image.png.png" alt="Main Page">
-        
-        <!-- 이 영역을 누르면 다음 페이지로 넘어갑니다 -->
         <a href="next.html" class="start-btn"></a>
     </div>
-
 </body>
 </html>
 
