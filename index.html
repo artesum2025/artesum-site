@@ -5,27 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArteSUM</title>
     <style>
-        body { margin: 0; padding: 0; background-color: #000; overflow-x: hidden; }
-        .container { position: relative; width: 100%; } /* 너비를 100%로 설정 */
+        body { margin: 0; padding: 0; background-color: #000; }
+        .container { 
+            position: relative; 
+            width: 100%; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+        }
         img { width: 100%; height: auto; display: block; border: none; }
 
-        /* 클릭 가능한 투명 버튼 (Start 버튼 위치에 맞게 조절) */
+        /* 클릭 가능한 투명 버튼 영역 */
         .start-btn {
             position: absolute;
-            bottom: 12%;      /* 이미지 하단에서의 높이 (필요시 조절) */
+            /* 이미지 전체 높이의 아래에서 5% 지점에 배치 */
+            bottom: 5%;      
             left: 50%;
             transform: translateX(-50%);
-            width: 15%;       /* 버튼 가로 크기 */
-            height: 6%;       /* 버튼 세로 크기 */
-            background-color: rgba(255, 255, 255, 0); 
+            /* 버튼 클릭 영역을 넉넉하게 잡았습니다 */
+            width: 200px;       
+            height: 60px;       
+            background-color: rgba(255, 255, 255, 0); /* 투명 */
             cursor: pointer;
             display: block;
+            z-index: 999;
+            /* 위치 확인용 (잘 눌리면 아래 줄을 지우세요) */
+            border: 2px solid red; 
         }
     </style>
 </head>
 <body>
     <div class="container">
         <img src="main-image.png.png" alt="Main Page">
+        <!-- 이 영역이 next.html로 연결됩니다 -->
         <a href="next.html" class="start-btn"></a>
     </div>
 </body>
