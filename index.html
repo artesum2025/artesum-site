@@ -1,22 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArteSUM</title>
     <style>
-        body { margin: 0; padding: 0; background-color: black; }
-        img { width: 100%; height: auto; display: block; border: none; }
+        body { margin: 0; padding: 0; background-color: #000; overflow-x: hidden; }
+        .container { position: relative; width: 100%; max-width: 1200px; margin: 0 auto; }
+        img { width: 100%; height: auto; display: block; }
+
+        /* 클릭 가능한 투명 버튼 영역입니다 */
+        .start-btn {
+            position: absolute;
+            bottom: 5%;      /* 이미지 하단에서 5% 높이 */
+            left: 50%;       /* 가로 중앙 */
+            transform: translateX(-50%); /* 정확히 가운데 정렬 */
+            width: 20%;      /* 버튼의 가로 너비 (조절 가능) */
+            height: 8%;      /* 버튼의 세로 높이 (조절 가능) */
+            background-color: rgba(255, 255, 255, 0); /* 투명하게 설정 */
+            cursor: pointer; /* 마우스 올리면 손가락 모양 */
+            display: block;
+        }
     </style>
 </head>
 <body>
 
-    <!-- 이미지와 클릭 영역을 연결합니다 -->
-    <img src="main-image.png.png" usemap="#start-map">
-
-    <map name="start-map">
-        /* 이미지 하단 중앙의 Start 버튼 영역을 지정합니다 */
-        <area shape="rect" coords="400,830,600,900" href="next.html" alt="Start" title="시작하기">
-    </map>
+    <div class="container">
+        <!-- 내 메인 이미지 파일 이름과 똑같아야 합니다! -->
+        <img src="main-image.png.png" alt="Main Page">
+        
+        <!-- 이 영역을 누르면 다음 페이지로 넘어갑니다 -->
+        <a href="next.html" class="start-btn"></a>
+    </div>
 
 </body>
 </html>
+
