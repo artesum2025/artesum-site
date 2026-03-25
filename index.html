@@ -5,47 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArteSUM - Atelier</title>
     
-    <!-- 슬라이드 기능을 위한 라이브러리 (자동 연결됨) -->
+    <!-- 슬라이드 기능을 위한 라이브러리 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net" />
     <script src="https://cdn.jsdelivr.net"></script>
 
     <style>
-        /* 화면 여백 제거 및 배경색 설정 */
         body { margin: 0; padding: 0; background-color: #f8f8f8; overflow-x: hidden; }
         .container { width: 100%; display: flex; flex-direction: column; align-items: center; }
         
-        /* 상단 슬라이드 영역 */
         .swiper { width: 100%; height: auto; }
         .swiper-slide img { width: 100%; height: auto; display: block; }
         
-        /* 아래쪽 긴 본문 이미지 */
         .body-img { width: 100%; height: auto; display: block; border: none; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- 1. 상단 슬라이드 부분 (5초마다 자동 전환) -->
+        <!-- 상단 슬라이드 (파일 이름을 실제 .png.png에 맞췄습니다) -->
         <div class="swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="top1.png" alt="상단 디자인 1"></div>
-                <div class="swiper-slide"><img src="top2.png" alt="상단 디자인 2"></div>
+                <div class="swiper-slide"><img src="top1.png.png" alt="상단 1"></div>
+                <div class="swiper-slide"><img src="top2.png.png" alt="상단 2"></div>
             </div>
         </div>
 
-        <!-- 2. 아래쪽 긴 본문 이미지 부분 -->
-        <img src="main-body.png" alt="본문 내용" class="body-img">
+        <!-- 하단 본문 (파일 이름을 실제 .png.png에 맞췄습니다) -->
+        <img src="main-body.png.png" alt="본문 내용" class="body-img">
     </div>
 
     <script>
-        // 슬라이드 작동 설정
         const swiper = new Swiper('.swiper', {
-            loop: true,               // 무한 반복
+            loop: true,
             autoplay: {
-                delay: 5000,          // 5초마다 전환
+                delay: 5000,
                 disableOnInteraction: false,
             },
-            speed: 1000,              // 부드럽게 넘어가는 속도 (1초)
+            speed: 1000,
         });
     </script>
 </body>
