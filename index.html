@@ -6,20 +6,34 @@
     <title>ArteSUM - Atelier</title>
     <style>
         body { margin: 0; padding: 0; background-color: #f8f8f8; overflow-x: hidden; }
-        .container { width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .container { width: 100%; display: flex; flex-direction: column; align-items: center; position: relative; }
 
-        /* 슬라이드 영역: 잘림 방지를 위해 이미지 높이에 맞춤 */
+        /* 상단 슬라이드 영역 */
         .slideshow { position: relative; width: 100%; display: block; line-height: 0; }
-        
-        /* 첫 번째 이미지는 공간을 차지하게 하고, 나머지는 그 위에 겹칩니다 */
         .slideshow img { width: 100%; height: auto; display: block; transition: opacity 1.5s ease-in-out; }
         .slideshow img:not(:first-child) { position: absolute; top: 0; left: 0; opacity: 0; }
-        
-        /* 활성화된 이미지만 보이게 설정 */
         .slideshow img.active { opacity: 1; }
 
-        /* 하단 본문 이미지 */
+        /* 하단 본문 이미지 영역 */
+        .body-container { position: relative; width: 100%; }
         .body-img { width: 100%; height: auto; display: block; border: none; }
+
+        /* [추가] '아뜰리에 시작하기' 버튼 클릭 영역 (투명) */
+        .start-btn {
+            position: absolute;
+            /* 이미지 맨 아래에서 약 3% 정도 위쪽 (보내주신 이미지 기준) */
+            bottom: 3%;      
+            left: 50%;
+            transform: translateX(-50%);
+            /* 버튼 크기에 맞게 넉넉히 설정 */
+            width: 300px; 
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0); 
+            cursor: pointer;
+            z-index: 100;
+            /* 위치 확인용 빨간 테두리 (잘 눌리면 아래 줄을 지우세요!) */
+            border: 2px solid red; 
+        }
     </style>
 </head>
 <body>
@@ -31,8 +45,13 @@
             <img src="top2.png.png" alt="상단 2">
         </div>
 
-        <!-- 하단 본문 이미지 -->
-        <img src="main-body.png.png" alt="본문 내용" class="body-img">
+        <!-- 하단 본문 이미지 부분 -->
+        <div class="body-container">
+            <img src="main-body.png.png" alt="본문 내용" class="body-img">
+            
+            <!-- [추가] 이 영역을 누르면 next.html로 이동합니다 -->
+            <a href="next.html" class="start-btn"></a>
+        </div>
     </div>
 
     <script>
@@ -40,15 +59,11 @@
         let currentIndex = 0;
 
         function showNextImage() {
-            // 모든 이미지 숨기기
             images.forEach(img => img.classList.remove('active'));
-            // 다음 번호 계산
             currentIndex = (currentIndex + 1) % images.length;
-            // 다음 이미지 보이기
             images[currentIndex].classList.add('active');
         }
 
-        // 5초마다 실행
         setInterval(showNextImage, 5000);
     </script>
 </body>
