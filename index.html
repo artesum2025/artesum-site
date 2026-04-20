@@ -18,21 +18,35 @@
         .body-container { position: relative; width: 100%; }
         .body-img { width: 100%; height: auto; display: block; border: none; }
 
-        /* [추가] '아뜰리에 시작하기' 버튼 클릭 영역 (투명) */
+        /* '아뜰리에 시작하기' 버튼 클릭 영역 (투명) */
         .start-btn {
             position: absolute;
-            /* 이미지 맨 아래에서 약 8.2% 정도 위쪽 (보내주신 이미지 기준) */
             bottom: 8.2%;      
             left: 50%;
             transform: translateX(-50%);
-            /* 버튼 크기에 맞게 넉넉히 설정 */
             width: 700px; 
             height: 300px;
             background-color: rgba(255, 255, 255, 0); 
             cursor: pointer;
             z-index: 1000;
-            /* 위치 확인용 빨간 테두리 (잘 눌리면 아래 줄을 지우세요!) */
-             
+        }
+
+        /* 기사 링크 영역 스타일 */
+        .article-footer {
+            padding: 50px 0; 
+            text-align: center;
+            background-color: #f8f8f8;
+            width: 100%;
+        }
+        .article-link {
+            color: #666; /* 링크 글자 색상 */
+            text-decoration: underline; /* 밑줄 */
+            font-size: 16px; 
+            font-family: 'Pretendard', sans-serif;
+            transition: color 0.3s;
+        }
+        .article-link:hover {
+            color: #000; /* 마우스 올렸을 때 색상 */
         }
     </style>
 </head>
@@ -49,8 +63,15 @@
         <div class="body-container">
             <img src="main-body.png.png" alt="본문 내용" class="body-img">
             
-            <!-- [추가] 이 영역을 누르면 next.html로 이동합니다 -->
+            <!-- 이 영역을 누르면 next.html로 이동합니다 -->
             <a href="next.html" class="start-btn"></a>
+        </div>
+
+        <!-- 하단 기사 링크 영역 -->
+        <div class="article-footer">
+            <a href="https://cctoday.co.kr" target="_blank" class="article-link">
+                [충청투데이] 아르떼숨(ArteSUM) 관련 기사 보러가기
+            </a>
         </div>
     </div>
 
